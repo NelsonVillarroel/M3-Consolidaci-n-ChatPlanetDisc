@@ -1,0 +1,61 @@
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+/* logo planet disc */
+.animated-logo-planetdisc {
+    width: 100px;
+    height: 100px;
+    position: relative;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    transform: scale(1);
+}
+
+.planet {
+    width: 30px;
+    height: 30px;
+    position: absolute;
+    top: 35px; 
+    left: 35px; 
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.planet i {
+    font-size: 40px; 
+    color: blueviolet; 
+}
+
+.moon {
+    width: 15px;
+    height: 15px;
+    position: absolute;
+    top: 0;
+    left: 0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    transform-origin: 50px 50px ; 
+    animation: rotation 2s linear infinite;
+}
+
+.moon i {
+    font-size: 15px; 
+    color: black; 
+}
+
+/* animation */
+@keyframes rotation {
+    0% {
+        transform: rotate(0deg) translateX(45px);
+    }
+    100% {
+        transform: rotate(360deg) translateX(45px);
+    }
+    
+}
