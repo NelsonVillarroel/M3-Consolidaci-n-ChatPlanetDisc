@@ -28,7 +28,7 @@
 
 .planet i {
     font-size: 40px; 
-    color: blueviolet; 
+    color: white; 
 }
 
 .moon {
@@ -46,7 +46,7 @@
 
 .moon i {
     font-size: 15px; 
-    color: black; 
+    color: grey; 
 }
 
 /* animation */
