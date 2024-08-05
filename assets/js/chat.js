@@ -40,14 +40,43 @@ var leftbar = document.getElementById('leftbar');
 var list = document.getElementById('scroll1');
 var chat = document.getElementById('chat');
 var back = document.getElementById('return')
-var contact = document.getElementById('first');
+var first = document.getElementById('first');
+var second = document.getElementById('second');
+var redmsg = document.getElementById('redmsg');
+
+
 
 // Functions click
-function contactClick() {
+function firstClick() {
     leftbar.style.display = 'none';
     list.style.display = 'none';
     chat.style.display = 'flex';
     back.style.display = 'flex';
+}
+
+function firstClickDesk() {
+    leftbar.style.display = 'none';
+    list.style.display = 'none';
+    chat.style.display = 'flex';
+    back.style.display = 'flex';
+}
+
+function secondClick() {
+    leftbar.style.display = 'none';
+    list.style.display = 'none';
+    chat.style.display = 'flex';
+    back.style.display = 'flex';
+    redmsg.style.display ='none';
+
+    // aqui en vez de hacer visible el chat, inyectar chat 2
+}
+
+function secondClickDesk() {
+    
+    redmsg.style.display ='none';
+
+    // aqui inyectar el nuevo chat2
+    
 }
 
 function backClick() {
@@ -63,8 +92,9 @@ function actionMovil() {
     chat.style.display = 'none';
     back.style.display = 'none';
 
-    contact.addEventListener('click', contactClick);
+    first.addEventListener('click', firstClick);
     back.addEventListener('click', backClick);
+    second.addEventListener('click', secondClick);
 
 }
 
@@ -75,8 +105,10 @@ function actionDesktop() {
     list.style.display = 'flex';
     chat.style.display = 'flex';
 
-    contact.removeEventListener('click', contactClick);
+    second.addEventListener('click', secondClickDesk);
+    first.removeEventListener('click', firstClick);
     back.removeEventListener('click', backClick);
+    second.removeEventListener('click', secondClick);
 
 }
 
@@ -98,6 +130,9 @@ function screenSize() {
 // load and resize
 window.addEventListener('load', screenSize);
 window.addEventListener('resize', screenSize);
+
+
+
 
 
 
