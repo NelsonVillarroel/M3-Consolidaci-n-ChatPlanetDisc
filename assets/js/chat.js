@@ -26,7 +26,7 @@ document.getElementById('msgform').addEventListener('submit', function (event) {
 
 
     //inyectar mensaje
-    chat_main.innerHTML += rightmsg;
+    chat_main.insertAdjacentHTML('afterbegin', rightmsg);
 
     // limpiar la entrada después de enviar el mensaje
     document.getElementById('liveMsg').value = '';
@@ -34,56 +34,65 @@ document.getElementById('msgform').addEventListener('submit', function (event) {
 })
 
 
-
+//desktop movil mode
 //vars
+var leftbar = document.getElementById('leftbar');
 var list = document.getElementById('scroll1');
 var chat = document.getElementById('chat');
 var back = document.getElementById('return')
 var contact = document.getElementById('first');
 
+// Functions click
+function contactClick() {
+    leftbar.style.display = 'none';
+    list.style.display = 'none';
+    chat.style.display = 'flex';
+    back.style.display = 'flex';
+}
 
+function backClick() {
+    leftbar.style.display = 'flex';
+    list.style.display = 'flex';
+    chat.style.display = 'none';
+    back.style.display = 'none';
+}
 
 //function movil
 function actionMovil() {
 
-    if (chat) {
-        chat.style.display = 'none';
-    }
+    chat.style.display = 'none';
+    back.style.display = 'none';
 
+    contact.addEventListener('click', contactClick);
+    back.addEventListener('click', backClick);
 
-    if (contact, list, back) {
-        contact.addEventListener('click', function () {
-            if (chat) {
-                chat.style.display = 'flex';
-                list.style.display = 'none';
-            }
-        })
-        back.addEventListener('click', function () {
-            if (list) {
-                list.style.display = 'flex';
-                chat.style.display = 'none';
-            }
-        })
-    };
 }
-
 
 // function desktop
 function actionDesktop() {
 
-    chat.style.display = 'flex';
+    leftbar.style.display = 'flex';
     list.style.display = 'flex';
+    chat.style.display = 'flex';
+
+    contact.removeEventListener('click', contactClick);
+    back.removeEventListener('click', backClick);
+
 }
 
 // function screen size
 function screenSize() {
+
     if (window.matchMedia('(max-width: 768px)').matches) {
 
         actionMovil();
+
     } else {
 
         actionDesktop();
+
     }
+
 }
 
 // load and resize
