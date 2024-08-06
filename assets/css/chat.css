@@ -2,14 +2,14 @@
     box-sizing: border-box;
     margin: 0px;
     padding: 0px;
-    font-family: Arial, Helvetica, sans-serif;
-
+    font-family: "Roboto", sans-serif;
+   
 }
 
 body {
     display: flex;
     height: 100vh;
-    background-color: #BAB0F8;
+    background-color: #cec5d8;
     justify-content: center;
     align-items: center;
 }
@@ -56,6 +56,7 @@ body {
 
 .dropdown .dropbtn {
     font-size: 16px;
+    margin-bottom: 10px;
     border: none;
     outline: none;
     color: white;
@@ -112,7 +113,8 @@ body {
 }
 
 .menu .return {
-    display: flex;
+    margin-bottom: 10px;
+    display: none;
 }
 
 .menu .settings {
@@ -129,6 +131,11 @@ body {
 
 .menu .faq {
     display: flex;
+}
+
+#contact-img {
+    display: none;
+
 }
 
 
@@ -210,7 +217,8 @@ body {
     width: 640px;
     height: 100%;
     background-color: #e9e2f1;
-    overflow: auto;
+    overflow-y: auto;
+    overflow-x: hidden;
 
 
 }
@@ -263,6 +271,7 @@ body {
 
 .contact:hover {
     background-color: #cec5d8;
+    transform: scale(1.05);
 }
 
 .contact-img {
@@ -318,6 +327,25 @@ body {
     overflow: auto;
     align-items: center;
 }
+#chatmain{
+    display: none;
+}
+
+.startscreen {
+    display: flex;
+    width: 100%;
+    height: 100%;
+    border-radius: 0 0 8px 0;
+    justify-content: center;
+    align-items: center;
+    background-color: #BAB0F8;
+    background-image: url(../img/chatpattern.png);
+    background-size: 200%;
+    font-size: xx-large;
+   
+    
+}
+
 
 .msg {
     display: flex;
@@ -326,6 +354,19 @@ body {
     border-radius: 8px;
     max-width: 60%;
 
+}
+
+.msg .imgsend{
+    
+    display: flex;
+    padding: 6px;
+    width: 170px;
+    height: 170px;
+}
+
+.imgsend:hover{
+
+    transform: scale(1.04);
 }
 
 .time {
@@ -351,21 +392,20 @@ body {
     justify-content: flex-end;
     margin-right: 16px;
     align-self: flex-end;
-
-
 }
 
-
 .time {
+
     margin-left: 6px;
 }
 
+
 .chatbar {
-    display: flex;
+    display: none;
     flex-direction: row;
     width: 100%;
     height: 60px;
-    background-color: #261338;
+    background-color: #9A78C3;
     border-radius: 0 0 8px 0;
     justify-content: space-around;
     align-items: center;
@@ -432,38 +472,38 @@ body {
 }
 
 /* apariencia scroll cotact list */
-#scroll1::-webkit-scrollbar {
+.scroll1::-webkit-scrollbar {
     width: 6px;
 }
 
-#scroll1::-webkit-scrollbar-track {
+.scroll1::-webkit-scrollbar-track {
     background-color: #e9e2f1;
 }
 
-#scroll1::-webkit-scrollbar-thumb {
+.scroll1::-webkit-scrollbar-thumb {
     background: #9A78C3;
     border-radius: 10px;
 }
 
-#scroll1::-webkit-scrollbar-thumb:hover {
+.scroll1::-webkit-scrollbar-thumb:hover {
     background: #9A78C3;
 }
 
 
 /* apariencia scroll chat*/
-#scroll2::-webkit-scrollbar {
+.scroll2::-webkit-scrollbar {
     width: 6px;
 }
 
-#scroll2::-webkit-scrollbar-track {
+.scroll2::-webkit-scrollbar-track {
     background-color: white;
 }
 
-#scroll2::-webkit-scrollbar-thumb {
+.scroll2::-webkit-scrollbar-thumb {
     background: #BAB0F8;
 }
 
-#scroll2::-webkit-scrollbar-thumb:hover {
+.scroll2::-webkit-scrollbar-thumb:hover {
     background: #BAB0F8;
 }
 
@@ -491,4 +531,26 @@ body {
         display: flex;
     }
 
+    .contact-list {
+        border-radius: 0 0 8px 0;
+    }
+
+    #scroll1::-webkit-scrollbar-track {
+        border-radius: 0 0 8px 0;
+    }
+
+    .chat {
+        border-radius: 0 0 8px 8px;
+    }
+
+    .chatbar {
+        border-radius: 0 0 8px 8px;
+    }
+    .msg .imgsend{
+    
+        
+        padding: 2px;
+        width: 120px;
+        height: 120px;
+    }
 }
